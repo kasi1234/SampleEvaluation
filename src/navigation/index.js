@@ -30,7 +30,7 @@ const AppStack = createStackNavigator({
       })
     }
   },{
-    defaultNavigationOptions:{ gesturesEnabled: false },
+    defaultNavigationOptions:{ gestureEnabled: false },
   });
 
 export default createStackNavigator({
