@@ -21,6 +21,7 @@ node_modules/react-native/interface.js
 node_modules/react-native/flow/
 
 [options]
+all=true
 emoji=true
 
 exact_by_default=true

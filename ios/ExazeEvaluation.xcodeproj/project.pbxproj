@@ -13,6 +13,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		AE97B4884305A8C6FA797B45 /* libPods-ExazeEvaluation-ExazeEvaluationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAC2768174F980BF35B52D5 /* libPods-ExazeEvaluation-ExazeEvaluationTests.a */; };
+		B51C234527579E440003581B /* SampleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C234427579E440003581B /* SampleAlert.swift */; };
+		B51C234727579F710003581B /* SampleAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C234627579F710003581B /* SampleAlert.m */; };
 		E0047B58D5747C017D8AD26D /* libPods-ExazeEvaluation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BE5E1C230260F5D784F8EE /* libPods-ExazeEvaluation.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,9 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ExazeEvaluation/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6BE15F5C84363C35CE73A58 /* Pods-ExazeEvaluation-ExazeEvaluationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExazeEvaluation-ExazeEvaluationTests.debug.xcconfig"; path = "Target Support Files/Pods-ExazeEvaluation-ExazeEvaluationTests/Pods-ExazeEvaluation-ExazeEvaluationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B40511D47E549C6E5CA20F76 /* Pods-ExazeEvaluation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExazeEvaluation.debug.xcconfig"; path = "Target Support Files/Pods-ExazeEvaluation/Pods-ExazeEvaluation.debug.xcconfig"; sourceTree = "<group>"; };
+		B51C234327579E440003581B /* ExazeEvaluation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExazeEvaluation-Bridging-Header.h"; sourceTree = "<group>"; };
+		B51C234427579E440003581B /* SampleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAlert.swift; sourceTree = "<group>"; };
+		B51C234627579F710003581B /* SampleAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleAlert.m; sourceTree = "<group>"; };
 		CDE813B3A0AE58BF145E0125 /* Pods-ExazeEvaluation-ExazeEvaluationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExazeEvaluation-ExazeEvaluationTests.release.xcconfig"; path = "Target Support Files/Pods-ExazeEvaluation-ExazeEvaluationTests/Pods-ExazeEvaluation-ExazeEvaluationTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -116,12 +121,15 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				B51C234627579F710003581B /* SampleAlert.m */,
+				B51C234427579E440003581B /* SampleAlert.swift */,
 				13B07FAE1A68108700A75B9A /* ExazeEvaluation */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ExazeEvaluationTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				9347FE48BDC40D3D8E6444E9 /* Pods */,
+				B51C234327579E440003581B /* ExazeEvaluation-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -145,7 +153,6 @@
 				A6BE15F5C84363C35CE73A58 /* Pods-ExazeEvaluation-ExazeEvaluationTests.debug.xcconfig */,
 				CDE813B3A0AE58BF145E0125 /* Pods-ExazeEvaluation-ExazeEvaluationTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +215,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -412,6 +419,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				B51C234527579E440003581B /* SampleAlert.swift in Sources */,
+				B51C234727579F710003581B /* SampleAlert.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6BE15F5C84363C35CE73A58 /* Pods-ExazeEvaluation-ExazeEvaluationTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDE813B3A0AE58BF145E0125 /* Pods-ExazeEvaluation-ExazeEvaluationTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ExazeEvaluationTests/Info.plist;
@@ -498,6 +509,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ExazeEvaluation;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/206962/Desktop/ExazeEvaluation/ios/ExazeEvaluation-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -523,6 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ExazeEvaluation;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/206962/Desktop/ExazeEvaluation/ios/ExazeEvaluation-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
