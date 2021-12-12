@@ -1,13 +1,13 @@
-//@flow
-import React, { useState, useEffect } from 'react';
+
+import * as React from 'react';
 import { View, Text, StyleSheet, NativeModules, Alert } from 'react-native';
 import { useSelector } from 'react-redux';
 import Screen from '../components/Screen';
 import { Colors } from '../assets/colors';
 import Button from '../components/Button'
 
-const NativeModuleScreen = ({ navigation }: Props) => {
-  const [isShowAlert, setShowAlert] = useState(false);
+const NativeModuleScreen = ({ navigation }: Props): React.Element<*> => {
+  const [isShowAlert, setShowAlert] = React.useState(false);
   const username = useSelector(state => state?.username);
 
   const alertShow = () => {
@@ -37,7 +37,7 @@ const NativeModuleScreen = ({ navigation }: Props) => {
     );
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     updateStatus();
   }, [])
 

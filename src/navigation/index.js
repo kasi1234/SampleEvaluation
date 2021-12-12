@@ -1,41 +1,21 @@
 import React from 'react';
-import { createStackNavigator, HeaderBackButton } from 'react-navigation-stack';
-import colors from '../assets/colors';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
 import NativeModuleScreen from '../screens/NativeModulescreen';
 
-const AppStack = createStackNavigator({
-    Welcome: {
-      screen: WelcomeScreen,
-      navigationOptions: ({ screenProps }) => ({
-        ...colors.Navigation.primary,
-        title: 'Welcome',
-      })
-    },
-    Home: {
-      screen: HomeScreen,
-      navigationOptions: ({ screenProps, navigation }) => ({
-        ...colors.Navigation.primary,
-        headerLeft: () => <HeaderBackButton onPress={() => { navigation.pop() }} />,
-        title: 'Home'
-      })
-    },
-    NativeModule: {
-      screen: NativeModuleScreen,
-      navigationOptions: ({ screenProps, navigation }) => ({
-        ...colors.Navigation.primary,
-        headerLeft: () => <HeaderBackButton onPress={() => { navigation.pop() }} />,
-        title: 'Native Module'
-      })
-    }
-  },{
-    defaultNavigationOptions:{ gestureEnabled: false },
-  });
+const Stack = createNativeStackNavigator();
 
-export default createStackNavigator({
-    AppStack
-},{
-    initialRouteName: 'AppStack',
-    defaultNavigationOptions: { headerShown: false, gestureEnabled: false },
-}) 
+const AppStack = () => (
+  <Stack.Navigator
+    initialRouteName={'Welcome'}
+    headerMode="none"
+    screenOptions={{ gestureEnabled: false }}
+  >
+    <Stack.Screen name='Welcome' component={WelcomeScreen} />
+    <Stack.Screen name='Home' component={HomeScreen} />
+    <Stack.Screen name='NativeModule' component={NativeModuleScreen} />
+  </Stack.Navigator>
+)
+
+export default AppStack;

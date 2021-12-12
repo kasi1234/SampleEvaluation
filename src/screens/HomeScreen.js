@@ -1,11 +1,17 @@
 //@flow
-import React from 'react';
+import * as React from 'react';
 import {View, Text, StyleSheet, Alert} from 'react-native';
-import SwipeButton from 'rn-swipe-button';
+import {SwipeButton} from 'rn-swipe-button';
 import Screen from '../components/Screen';
 import Button from '../components/Button';
 import { Colors } from '../assets/colors';
 import { useSelector } from 'react-redux';
+
+type Props = {
+  navigation: {
+    navigate: Function
+  }
+};
 
 const showAlert = (message) => {
   Alert.alert(
@@ -16,19 +22,19 @@ const showAlert = (message) => {
   );
 }
 
-const HomeScreen = ({navigation }: Props) => {
+const HomeScreen = ({ navigation }: Props): React.Element<*> => {
     const username = useSelector(state => state?.username);
     const { container, text, buttonsContainer, buttonStyle } = styles;
   return (
     <Screen darkBar>
       <View style={container}>
-        <Text style={text}>
-            {`User Name: ${username}`}
+        <Text testID='greeting' style={text}>
+            {`Hello User: ${username}`}
         </Text>
       </View>
       <View style={buttonsContainer}>
         <Button
-          backgroundColor={Colors.white}
+          testID="button1"
           border={Colors.white}
           color={Colors.white}
           textColor={Colors.primary}
@@ -39,7 +45,7 @@ const HomeScreen = ({navigation }: Props) => {
           text='Press Me'
         />
         <Button
-          backgroundColor={Colors.disable}
+          testID="button2"
           border={Colors.white}
           color={Colors.disable}
           textColor={Colors.primary}
@@ -50,6 +56,7 @@ const HomeScreen = ({navigation }: Props) => {
           text='Press Me'
         />
         <Button
+          testID="button3"
           textColor={Colors.white}
           onPress={() => {
             showAlert('Message from Button3');

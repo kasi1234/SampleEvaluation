@@ -1,5 +1,5 @@
 //@flow
-import React, { useState } from 'react';
+import * as React from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 import Screen from '../components/Screen';
 import { useDispatch } from 'react-redux';
@@ -7,13 +7,19 @@ import { setUsername } from '../redux/appActions';
 import Button from '../components/Button';
 import { Colors } from '../assets/colors';
 
-const WelcomeScreen = ({ navigation }: Props) => {
-  const [name, setName] = useState('');
+type Props = {
+  navigation: {
+    navigate: Function
+  }
+};
+
+const WelcomeScreen = ({ navigation: { navigate } }: Props): React.Element<*> => {
+  const [name, setName] = React.useState('');
   const dispatch = useDispatch();
 
   const navigateToScreen = (screenName) => {
     dispatch(setUsername(name));
-    navigation.navigate(screenName);
+    navigate(screenName);
     setName('');
   }
 
@@ -24,15 +30,17 @@ const WelcomeScreen = ({ navigation }: Props) => {
           EXAZE
         </Text>
         <TextInput
+          testID='userName'
           value={name}
           style={styles.input}
           underlineColorAndroid="transparent"
-          placeholder="Enter Name"
+          placeholder="Enter User Name"
           placeholderTextColor={Colors.placeholderTextColor}
           autoCapitalize="none"
           onChangeText={text => setName(text)}
         />
         <Button
+          testID='submitButton'
           disabled={!name}
           onPress={() =>
             navigateToScreen('Home')
@@ -41,6 +49,7 @@ const WelcomeScreen = ({ navigation }: Props) => {
           text='Continue'
         />
         <Button
+          testID='nativeModuleButton'
           disabled={!name}
           onPress={() =>
             navigateToScreen('NativeModule')

@@ -1,28 +1,33 @@
-import React from 'react';
+//@flow
+import * as React from 'react';
 import { SafeAreaView, StatusBar, View } from 'react-native';
-import PropTypes from 'prop-types';
 import { Colors } from '../assets/colors';
 
-export const Screen = (props) => {
-  const Container = props.view ? View : SafeAreaView;
-  const getBarStyle = () => (props.darkBar ? 'dark-content' : 'light-content');
+type Props = {
+  background: string,
+  darkBar: boolean,
+  view: boolean,
+  children: React.Node
+};
+
+const Screen = ({background, darkBar, view, children }: Props): React.Element<*> => {
+  const Container = view ? View : SafeAreaView;
+  const getBarStyle = () => (darkBar ? 'dark-content' : 'light-content');
 
   return (
-    <Container style={{ flex: 1, backgroundColor: props.background }}>
+    <Container style={{ flex: 1, backgroundColor: background }}>
         <StatusBar barStyle={getBarStyle()} />
-        {props.children}
+        {children}
     </Container>
   );
 };
 
+
 Screen.defaultProps = {
   background: Colors.white,
   darkBar: false,
-};
-
-Screen.propTypes = {
-  background: PropTypes.string,
-  darkBar: PropTypes.bool
+  view: false,
+  children: null 
 };
 
 export default Screen;

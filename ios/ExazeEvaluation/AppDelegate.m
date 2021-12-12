@@ -25,16 +25,23 @@ static void InitializeFlipper(UIApplication *application) {
 
 @implementation AppDelegate
 
+BOOL isSimulator = NO;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
+  
+#if TARGET_IPHONE_SIMULATOR
+  isSimulator = YES;
+#endif
+
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"ExazeEvaluation"
-                                            initialProperties:nil];
+                                            initialProperties:@{@"isSimulator":@(isSimulator)}];
 
   if (@available(iOS 13.0, *)) {
       rootView.backgroundColor = [UIColor systemBackgroundColor];

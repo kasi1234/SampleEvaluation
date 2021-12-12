@@ -509,7 +509,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ExazeEvaluation;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/206962/Desktop/ExazeEvaluation/ios/ExazeEvaluation-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/206962/Documents/Test/ios/ExazeEvaluation-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -535,7 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ExazeEvaluation;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/206962/Desktop/ExazeEvaluation/ios/ExazeEvaluation-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/206962/Documents/Test/ios/ExazeEvaluation-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -604,6 +604,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/206962/Documents/Test/ios/ExazeEvaluation-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -662,6 +663,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/206962/Documents/Test/ios/ExazeEvaluation-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

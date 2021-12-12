@@ -1,8 +1,20 @@
-import React from 'react';
-import { ViewPropTypes } from 'react-native';
+//@flow
+import * as React from 'react';
 import styled from 'styled-components/native';
-import PropTypes from 'prop-types';
 import { Colors } from '../assets/colors';
+
+type Props = {
+  border: string,
+  color: string,
+  disabled: boolean,
+  disabledBorderColor: string,
+  disabledColor: string,
+  disabledTextColor: string,
+  onPress: Function,
+  style?: Object | Array<Object>,
+  text: string,
+  textColor: string,
+};
 
 const Container = styled.View(props => ({
   alignItems: 'center',
@@ -25,25 +37,35 @@ const Touchable = styled.TouchableHighlight({
   overflow: 'hidden',
 });
 
-const Button = props => (
-  <Touchable
-    disabled={props.disabled}
-    onPress={props.onPress}
-    style={props.style}
-    underlayColor={Colors.disable}
-  >
-    <Container
-      border={props.border}
-      color={props.color}
-      disabled={props.disabled}
-      disabledBorderColor={props.disabledBorderColor}
-      disabledColor={props.disabledColor}
-      type={props.type}
-    >
-       <Text textColor={props.disabled ? props.disabledTextColor : props.textColor}>{props.text}</Text>
-    </Container>
-  </Touchable>
-);
+const Button = ({
+  disabled,
+  onPress,
+  style,
+  border,
+  color,
+  disabledBorderColor,
+  disabledTextColor,
+  disabledColor,
+  text,
+  textColor,
+}: Props): React.Element<*> => {
+  return (
+    <Touchable
+      disabled={disabled}
+      onPress={onPress}
+      style={style}
+      underlayColor={Colors.disable}>
+      <Container
+        border={border}
+        color={color}
+        disabled={disabled}
+        disabledBorderColor={disabledBorderColor}
+        disabledColor={disabledColor}>
+        <Text textColor={disabled ? disabledTextColor : textColor}>{text}</Text>
+      </Container>
+    </Touchable>
+  )
+}
 
 Button.defaultProps = {
   border: Colors.primary,
@@ -55,19 +77,6 @@ Button.defaultProps = {
   onPress: () => {},
   style: null,
   textColor: Colors.white,
-};
-
-Button.propTypes = {
-  border: PropTypes.string,
-  color: PropTypes.string,
-  disabled: PropTypes.bool,
-  disabledBorderColor: PropTypes.string,
-  disabledColor: PropTypes.string,
-  disabledTextColor: PropTypes.string,
-  onPress: PropTypes.func,
-  style: ViewPropTypes.style,
-  text: PropTypes.string.isRequired,
-  textColor: PropTypes.string,
 };
 
 export default Button;
