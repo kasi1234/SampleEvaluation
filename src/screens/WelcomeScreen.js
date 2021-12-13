@@ -27,7 +27,7 @@ const WelcomeScreen = ({ navigation: { navigate } }: Props): React.Element<*> =>
     <Screen darkBar>
       <View style={styles.container}>
         <Text style={styles.text}>
-          EXAZE
+          Login With Username
         </Text>
         <TextInput
           testID='userName'

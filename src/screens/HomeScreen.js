@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import {View, Text, StyleSheet, Alert} from 'react-native';
-import {SwipeButton} from 'rn-swipe-button';
+import SwipeButton from 'rn-swipe-button';
 import Screen from '../components/Screen';
 import Button from '../components/Button';
 import { Colors } from '../assets/colors';
